@@ -9,7 +9,8 @@ function Validator(options) {
       element = element.parentElement;
     }
   }
-
+  var a = getParent(document.querySelector("#email"), ".form-group");
+  console.log(a);
   //selectorRules {"#email": [funciton isRequired, isEmail...]}
   var selectorRules = {};
 

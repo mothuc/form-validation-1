@@ -80,8 +80,6 @@
           Validator.isEmail("#email", "Email không hợp lệ"),
           Validator.isRequired("#password", "Vui lòng nhập mật khẩu"),
           Validator.minLength("#password", 6),
-          Validator.isRequired('input[name="gender"]'),
-          Validator.isRequired("#province"),
           Validator.isConfirmed(
             "#password_confirmation",
             function () {
