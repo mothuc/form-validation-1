@@ -11,7 +11,7 @@
     <div class="main">
       <form action="" method="POST" class="form" id="form-1">
         <h3 class="heading">Đăng ký</h3>
-        <p class="desc">Cùng nhau học lập trình miễn phí tại F8</p>
+        <p class="desc"></p>
         <div class="spacer"></div>
 
         <div class="form-group">
@@ -62,41 +62,6 @@
           <span class="form-message"></span>
         </div>
 
-        <div class="form-group">
-          <label for="password_confirmation" class="form-label">Giới tính</label>
-          <div class="genderCheckbox">
-            <div>
-              <p>Nam</p>
-              <input class="form-control" type="checkbox" name="gender" value="male" />
-            </div>
-            <div>
-              <p>Nữ</p>
-              <input class="form-control" type="checkbox" name="gender" value="female" />
-            </div>
-            <div>
-              <p>Khác</p>
-              <input class="form-control" type="checkbox" name="gender" value="other" />
-            </div>
-          </div>
-          <span class="form-message"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="province" class="form-label">Tỉnh/Tp</label>
-          <select class="form-control" id="province" name="province">
-            <option value="">-- Chọn Tỉnh/Tp --</option>
-            <option value="hni">Hà Nội</option>
-            <option value="hpg">Hải Phòng</option>
-          </select>
-          <span class="form-message"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="avatar" class="form-label">Tỉnh/Tp</label>
-          <input class="form-control" type="file" id="avatar" name="avatar" />
-          <span class="form-message"></span>
-        </div>
-
         <button class="form-submit">Đăng ký</button>
       </form>
     </div>
@@ -110,20 +75,20 @@
         errorSelector: ".form-message",
         rules: [
           // Ham nhan selector roi tra ve ket qua test
-          // Validator.isRequired("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
+          Validator.isRequired("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
           Validator.isRequired("#avatar", "Vui lòng nhập email"),
-          // Validator.isEmail("#email", "Email không hợp lệ"),
-          // Validator.isRequired("#password", "Vui lòng nhập mật khẩu"),
-          // Validator.minLength("#password", 6),
-          // Validator.isRequired('input[name="gender"]'),
-          // Validator.isRequired("#province"),
-          // Validator.isConfirmed(
-          //   "#password_confirmation",
-          //   function () {
-          //     return document.querySelector("#form-1 #password").value;
-          //   },
-          //   "Mật khẩu nhập lại không chính xác"
-          // ),
+          Validator.isEmail("#email", "Email không hợp lệ"),
+          Validator.isRequired("#password", "Vui lòng nhập mật khẩu"),
+          Validator.minLength("#password", 6),
+          Validator.isRequired('input[name="gender"]'),
+          Validator.isRequired("#province"),
+          Validator.isConfirmed(
+            "#password_confirmation",
+            function () {
+              return document.querySelector("#form-1 #password").value;
+            },
+            "Mật khẩu nhập lại không chính xác"
+          ),
         ],
         onSubmit: function (data) {
           console.log(data);
